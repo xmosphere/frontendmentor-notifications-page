@@ -1,0 +1,174 @@
+
+body {
+    background-color: hsl(210, 60%, 98%);
+}
+
+/* forces notification box to take up at least 90 screen height units */
+main {
+    min-height: 90vh;
+}
+/* gives margins for space above the container and some space for the front end mentor message*/
+.NotificationsContainer {
+    margin-top: 2rem; margin-bottom: 1rem;
+    padding-left: 1rem; padding-right: 1rem;
+    background-color: hsl(0, 0%, 100%);
+}
+.TopBar {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+}
+.TopBarLeftSide {
+}
+.TopBarRightSide {
+    text-align: right;
+}
+/* span element with background color for number of notifications */ 
+.CountIconText {
+    background-color: hsl(219, 85%, 26%);
+    font-size: 12px;
+    border-radius: 5px;
+    padding: .25rem;
+    justify-self: center;
+    color: hsl(0, 0%, 100%);
+}
+
+/* style elements for both read and unread notifications*/
+.Notification, .UnreadNotification {
+    margin-bottom: .25rem;
+    display: grid;
+    grid-template-columns: 1fr 8fr 1fr;
+    width: 100%;
+    border-radius: 10px;
+}
+.UnreadNotification {
+    background-color: hsl(210, 60%, 98%);
+}
+.Notification {
+    background-color: hsl(0, 0%, 100%);
+}
+
+.AvatarImgDiv {
+    padding: .25rem;
+    height: 100%;
+}
+.AvatarImg {
+    width: 30px;
+    height: 30px;
+}
+.PictureImgDiv {
+    padding: .25rem;
+    height: 100%;
+}
+.PictureImg {
+    width: 30px;
+    height: 30;
+}
+
+.ClearNotificationsText:hover {
+    color: brown;
+}
+
+
+.QuoteBox {
+    margin-top: .25rem;
+    padding: .5rem;
+    background-color: hsl(0, 0%, 100%);
+    border: solid hsl(219, 12%, 42%);
+    border-width: 1px;
+    border-radius: 5px;
+}
+.QuoteBox:hover {
+    border-color: hsl(0, 0%, 100%);
+    background-color: hsl(211, 68%, 94%);
+
+}
+
+
+/* CSS SETTINGS FOR TEXT */
+
+@font-face {
+    font-family: "PlusJakartaSans";
+    src: url(./assets/fonts/PlusJakartaSans-VariableFont_wght.ttf) format('ttf');
+}
+.TopBarText {
+    font-family: 'PlusJakartaSans' normal;
+}
+
+.BulletUnread {
+    color: hsl(1, 90%, 64%);
+}
+.BulletRead {
+    color: hsl(0, 0%, 100%);
+}
+.ClearNotificationsText {
+    font-family: 'PlusJakartaSans';
+    font-size: 12px;
+    font-style: normal;
+}
+.ClearNotificationsText:hover {
+    color: hsl(219, 85%, 26%);
+}
+.MessageBox {
+    display: grid;
+    padding-left: .5em;
+}
+.MessageText {
+    font-family: 'PlusJakartaSans';
+    color: hsl(219, 12%, 42%);
+    padding-top: .25rem;
+    margin: 0rem;
+    font-size: 10px;
+}
+.MessageBoxBreak {
+    margin: 0rem;
+    padding: 0rem;
+}
+.Subtext {
+    font-family: 'PlusJakartaSans';
+    color: hsl(219, 12%, 42%);
+    margin: 0rem;
+    font-size: 8px;
+}
+
+.HighlightText {
+    font-family: 'PlusJakartaSans';
+    font-weight: bold;
+    color: hsl(224, 21%, 14%);
+}
+.HighlightText:hover {
+    color: hsl(219, 85%, 26%);
+}
+
+
+/* CSS For Mobile Devices */
+@media only screen and (max-width: 375px) {
+    main {
+        display: grid;
+        grid-template-columns: 0fr 1fr 0fr;
+    }
+
+    .NotificationsContainer {
+        background-color: hsl(0, 0%, 100%);
+    }
+    
+  }
+
+/* CSS For Devices Larger than Mobile */
+@media only screen and (min-width: 375px) {
+    main {
+        justify-items: center;
+        display: grid;
+        grid-template-columns: 8fr 13fr 8fr;
+    }
+    .NotificationsContainer {
+        width: 100%;
+        justify-content: normal;
+        padding-top: 1em;
+        background-color: hsl(0, 0%, 100%);
+        border-radius: 25px;
+    }
+
+    .Notification, .UnreadNotification {
+        padding: .25rem;
+    }
+  }

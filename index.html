@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Notifications page</title>
+  <script>
+      function getCount() {
+        //Gets elements by class name
+        var unreadNotifications = document.querySelectorAll(".UnreadNotification")
+        //set variable count to length of returned unreadNotifications object
+        var count = unreadNotifications.length;
+        //Sets the text of element to count from id attribute
+        document.getElementById("countTag").innerHTML = count;
+      }
+      function markAsRead() {
+        //Gets elements of divs and bulletp points by class name
+        var unreadNotifications = document.querySelectorAll(".UnreadNotification");
+        var notificationsIcon = document.querySelectorAll(".BulletUnread");
+        //for loop setting style of element to read class version
+        for(var i = 0; i <= (unreadNotifications.length - 1); i++) {
+          var element = unreadNotifications.item(i);
+          var bullet = notificationsIcon.item(i);
+          bullet.setAttribute("class", "BulletRead");
+          element.setAttribute("class", "Notification");
+        }
+        //runs get count function to change the count to 0
+        getCount();
+      }
+  </script>
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+  </style>
+</head>
+<body onload="getCount()">
+  <main>
+      <div>
+        <!-- Div used in grid desktop layout to center Notifications container -->
+      </div>
+      <!-- Container for the entire notifications container -->
+      <div class="NotificationsContainer">
+        <!-- Child elements are self contained 1 item per row grids-->
+        <article class="TopBar">
+          <div class="TopBarLeftSide">
+            <article>
+              <h1 class="TopBarText">Notifications <span class="CountIconText" id="countTag">
+              </span></h1>
+            </article>
+          </div>
+          <div class="TopBarRightSide">
+            <p class="ClearNotificationsText">
+              <a  onclick="markAsRead()">Mark all as read</a>
+            </p>
+          </div>
+        </article>
+  
+        <article class="UnreadNotification">
+          <!-- div to fit to the hight of parent article. Img element scales to div size -->
+          <div class="AvatarImgDiv">
+            <img class="AvatarImg" src="./assets/images/avatar-mark-webber.webp" alt="Avatar Mark Webber">
+          </div>
+          <!-- Notification text wrapped in div to put it on line with avatars and other notification elements-->
+          <div class="MessageBox">
+            <p class="MessageText"><span class="HighlightText">Mark Webber</span>
+               reacted to your recent post <span class="HighlightText">My first tournament today! </span><span class="BulletUnread">&#x2022;</span></p>
+            <br>
+            <p class="Subtext">1m ago</p>
+          </div>
+        </article>
+        <article class="UnreadNotification">
+          <!-- div to fit to the hight of parent article. Img element scales to div size -->
+          <div class="AvatarImgDiv">
+            <img class="AvatarImg" src="assets/images/avatar-angela-gray.webp" alt="Avatar Angela Grey">
+          </div>
+          <!-- Notification text wrapped in div to put it on line with avatars and other notification elements-->
+          <div class="MessageBox">
+            <p class="MessageText"><span class="HighlightText">Angela Gray</span> followed you <span class="BulletUnread">&#x2022;</span></p>
+            <br class="MessageBoxBreak">
+            <p class="Subtext">5m ago</p>
+          </div>
+        </article>
+        <article class="UnreadNotification">
+          <!-- div to fit to the hight of parent article. Img element scales to div size -->
+          <div class="AvatarImgDiv">
+            <img class="AvatarImg" src="assets/images/avatar-jacob-thompson.webp" alt="Avatar Jacob Thompson">
+          </div>
+          <!-- Notification text wrapped in div to put it on line with avatars and other notification elements-->
+          <div class="MessageBox">
+            <p class="MessageText"><span class="HighlightText">Jacob Thompson</span> has joined your group 
+              <span class="HighlightText">Chess Club</span> <span class="BulletUnread">&#x2022;</span></p>
+            <br class="MessageBoxBreak">
+            <p class="Subtext">1 day ago</p>
+          </div>
+        </article>
+        <article class="Notification">
+          <!-- div to fit to the hight of parent article. Img element scales to div size -->
+          <div class="AvatarImgDiv">
+            <img class="AvatarImg" src="assets/images/avatar-rizky-hasanuddin.webp" alt="Avatar Rizky Hasanuddin">
+          </div>
+          <!-- Notification text wrapped in div to put it on line with avatars and other notification elements-->
+          <div class="MessageBox">
+            <p class="MessageText"><span class="HighlightText">Rizky Hasanuddin</span> sent you a private message <span class="BulletRead">&#x2022;</span></p>
+            <br class="MessageBoxBreak">
+            <p class="Subtext">5 days ago</p>
+            <div class="QuoteBox">
+              <p class="MessageText">
+                Hello, thanks for setting up the Chess Club. I've been a member for a few weeks now and 
+  I'm already having lots of fun and improving my game.
+              </p>
+            </div>
+          </div>
+        </article>
+        <article class="Notification">
+          <!-- div to fit to the hight of parent article. Img element scales to div size -->
+          <div class="AvatarImgDiv">
+            <img class="AvatarImg" src="assets/images/avatar-kimberly-smith.webp" alt="Avatar Kimberly Smith">
+          </div>
+          <!-- Notification text wrapped in div to put it on line with avatars and other notification elements-->
+          <div class="MessageBox">
+            <p class="MessageText"><span class="HighlightText">Kimberly Smith</span> commented on your picture <span class="BulletRead">&#x2022;</span></p>
+            <br class="MessageBoxBreak">
+            <p class="Subtext">1 week ago</p>
+          </div>
+          <div class="PictureImgDiv">
+            <img class="PictureImg" src="assets/images/image-chess.webp" alt="picture of chess">
+          </div>
+        </article>
+        <article class="Notification">
+          <!-- div to fit to the hight of parent article. Img element scales to div size -->
+          <div class="AvatarImgDiv">
+            <img class="AvatarImg" src="assets/images/avatar-nathan-peterson.webp" alt="Avatar Nathan Peterson">
+          </div>
+          <!-- Notification text wrapped in div to put it on line with avatars and other notification elements-->
+          <div class="MessageBox">
+            <p class="MessageText"><span class="HighlightText">Nathan Peterson</span> reacted to your recent post <span class="HighlightText">5 end-game strategies to increase your win rate</span>
+              <span class="BulletRead">&#x2022;</span></p>
+            <br class="MessageBoxBreak">
+            <p class="Subtext">2 weeks ago</p>
+          </div>
+        </article>
+        <article class="Notification">
+          <!-- div to fit to the hight of parent article. Img element scales to div size -->
+          <div class="AvatarImgDiv">
+            <img class="AvatarImg" src="assets/images/avatar-anna-kim.webp" alt="Avatar Anna Kim">
+          </div>
+          <!-- Notification text wrapped in div to put it on line with avatars and other notification elements-->
+          <div class="MessageBox">
+            <p class="MessageText"><span class="HighlightText">Anna Kim</span> left the group <span class="HighlightText">Chess Club</span>
+               <span class="BulletRead">&#x2022;</span></p>
+            <br class="MessageBoxBreak">
+            <p class="Subtext">5 weeks ago</p>
+          </div>
+        </article>
+      </div>
+      <div>
+
+      </div>
+    
+    
+  </main>
+  
+
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">Your Name Here</a>.
+  </div>
+</body>
+</html>
