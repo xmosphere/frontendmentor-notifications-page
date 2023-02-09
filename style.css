@@ -151,7 +151,7 @@ main {
     }
     .NotificationsContainer {
         background-color: hsl(0, 0%, 100%);
-        width: 100%;
+        width: 100vw;
     }
     
   }
