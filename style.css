@@ -141,7 +141,7 @@ main {
 
 
 /* CSS For Mobile Devices */
-@media only screen and (max-width: 375px) {
+@media only screen and (max-width: 500px) {
     main {
         display: grid;
         grid-template-columns: 0fr 1fr 0fr;
@@ -154,7 +154,7 @@ main {
   }
 
 /* CSS For Devices Larger than Mobile */
-@media only screen and (min-width: 375px) {
+@media only screen and (min-width: 500px) {
     main {
         justify-items: center;
         display: grid;
