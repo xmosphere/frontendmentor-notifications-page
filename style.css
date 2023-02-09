@@ -147,7 +147,8 @@ main {
         grid-template-columns: 0fr 1fr 0fr;
     }
     .Side {
-    display: none;
+        display: none;
+        width: 0vw;
     }
     .NotificationsContainer {
         background-color: hsl(0, 0%, 100%);
